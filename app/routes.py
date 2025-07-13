@@ -1,6 +1,6 @@
 from flask import Blueprint, render_template, request, jsonify, session
 import uuid, secrets
-from .mock_game_ai import AIService
+from .game_ai import AIService
 
 bp = Blueprint("main", __name__)
 ai_service = AIService()
