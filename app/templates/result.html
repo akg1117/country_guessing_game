@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>国あてゲーム - 結果</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <header class="header">
+    <span class="header-title">🌏 国あてゲーム</span>
+  </header>
+  <main class="main-content">
+    <section class="card">
+      <h2 class="section-title">結果発表</h2>
+      <div id="result-message" class="output-message">結果を読み込み中...</div>
+      <div class="explanation-card">
+        <h3>国の概要</h3>
+        <div id="country-summary">ここに国の概要が表示されます</div>
+        <h3>ヒント解説</h3>
+        <div id="hint-explanation">ここにヒントの一言解説が表示されます</div>
+      </div>
+      <div class="button-group">
+        <button class="button" onclick="window.location.href='/'">トップに戻る</button>
+      </div>
+    </section>
+  </main>
+  <script src="/static/result.js"></script>
+</body>
+</html>

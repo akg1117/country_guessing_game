@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>国あてゲーム - ゲーム</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <header class="header">
+    <span class="header-title">🌏 国あてゲーム</span>
+  </header>
+  <main class="main-content">
+    <section class="hint-section card">
+      <h2 class="section-title">ヒント</h2>
+      <div id="hint-result" class="output-message">ヒントを読み込み中...</div>
+    </section>
+    <section class="question-section card">
+      <h2 class="section-title">質問</h2>
+      <div id="question-count" class="question-count"></div>
+      <div class="input-row">
+        <label for="question" class="visually-hidden">ChatGPTに質問</label>
+        <input type="text" id="question" class="input-text" placeholder="ChatGPTに質問" autocomplete="off">
+        <button id="question-button" class="button primary">質問を送信</button>
+      </div>
+      <div id="last-question" class="output-message"></div>
+    </section>
+    <section class="guess-section card">
+      <h2 class="section-title">国名を当てる</h2>
+      <div class="input-row">
+        <label for="guess" class="visually-hidden">国名を入力</label>
+        <input type="text" id="guess" class="input-text" placeholder="国名を入力" autocomplete="off">
+        <button id="guess-button" class="button primary">国を当てる</button>
+      </div>
+    </section>
+    <div class="button-group">
+      <button class="button" onclick="window.location.href='/'">トップに戻る</button>
+    </div>
+  </main>
+  <script src="/static/game.js"></script>
+</body>
+</html>

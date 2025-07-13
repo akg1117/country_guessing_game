@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>国あてゲーム - トップ</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <header class="header">
+    <span class="header-title">🌏 国あてゲーム</span>
+  </header>
+  <main class="main-content">
+    <section class="card">
+        <h2 class="section-title">このゲームについて</h2>
+        <p>ChatGPTに質問をして、どの国を考えているかを当ててください。</p>
+        <p>ヒントをもとに5問以内で国を当てましょう！</p>
+    </section>
+    <section class="card">
+      <h2 class="section-title">難易度選択</h2>
+      <form id="start-form">
+        <div class="mode-radio-group">
+          <label class="mode-radio"><input type="radio" name="mode" value="easy"> かんたん</label>
+          <label class="mode-radio"><input type="radio" name="mode" value="normal" checked> ふつう</label>
+          <label class="mode-radio"><input type="radio" name="mode" value="hard"> むずかしい</label>
+        </div>
+        <div class="button-group">
+          <button type="submit" class="button primary">ゲームスタート！</button>
+        </div>
+      </form>
+    </section>
+  </main>
+  <script>
+    document.getElementById('start-form').addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const mode = document.querySelector('input[name="mode"]:checked').value;
+      await fetch('/start', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ mode })
+      });
+      window.location.href = '/game';
+    });
+  </script>
+</body>
+</html>
